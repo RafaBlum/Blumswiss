@@ -68,6 +68,8 @@ header {
     width: 100%;
     max-width: 1000px;
     padding-top: 24px;
+    justify-content: space-between;
+    
 }
 
 header img {

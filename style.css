@@ -53,12 +53,14 @@ body, button, a {
 }
 
 #app {
+    
     display: flex;
 
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: 100vh;
+    
 }
 
 header {
@@ -68,6 +70,10 @@ header {
     width: 100%;
     max-width: 1000px;
     padding-top: 24px;
+    justify-content: space-between;
+    
+    
+    
 }
 
 header img {
@@ -80,6 +86,7 @@ header img {
     align-items: center;
     column-gap: 48px;
     list-style: none;
+    
 }
 
 .navigation__link {
@@ -124,6 +131,7 @@ header img {
     display: flex;
     align-items: center;
     column-gap: 24px;
+    
 }
 
 .navigation__social svg {
@@ -132,6 +140,7 @@ header img {
     opacity: 0.6;
 
     transition: all 0.4s;
+    
 }
 .navigation__social svg:hover {
     opacity: 1;
@@ -139,5 +148,63 @@ header img {
     cursor: pointer;
 }
 
+#btn-mobile {
+    display: none;
+    
+}
+
+@media (max-width: 600px) {
+    
+    #menu {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 149px;
+        right: 0px;
+        background: rgb(77, 76, 76);
+        
+        
+        
+    }
+    #nav.active #menu {
+        display: block;
+    }
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    #hamburger {
+        color: white;
+        display: block;
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #hamburger::after, #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+}
 
 
